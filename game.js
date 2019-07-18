@@ -17,4 +17,21 @@ document.addEventListener('keypress', (event) => {
 
 // Create an event listener to get user keypresses
 // If users key press is a letter:
-// 
+// do check function
+// else:
+// do pleaseSelectLetter function
+
+// Check function
+// remaining guesses - 1
+// if event.key equals letter:
+//   wins + 1
+//   reset function
+// if guesses > 1 and:
+//   push guess to guessed letters
+// if guess == 0:
+//   losses + 1
+//   reset function
+
+// reset function
+// remaining guesses back to 6
+// guessed letters set to none
