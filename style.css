@@ -1,6 +1,7 @@
 /* Black #111 */
 body {
-  margin: 0px
+  margin: 0px;
+  font-family: 'Barriecito', cursive;
 }
 
 * {
@@ -12,6 +13,14 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #000000;
+}
+
+.nav-top {
+  font-size: 3em;
+}
+
+.nav-bottom {
+  font-size: 1.5em;
 }
 
 .nav-container {
@@ -26,21 +35,14 @@ body {
 
 .content-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  background-color: #CCCCCC;
-}
-
-.content-container {
-  display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80vw;
-  height: 60vh;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px #000000;
+  width: 100vw;
+  height: 80vh;
+  background-image: url(./images/meditation-3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .content-boxes {
