@@ -1,7 +1,69 @@
+/* Black #111 */
 body {
   margin: 0px
 }
 
 * {
   box-sizing: border-box;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+  width: 80vw;
+  color: white;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #CCCCCC;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+  height: 60vh;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+.content-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 300px;
+  height: 150px;
+  padding-left: 20px;
+  background-color: #CCCCCC;
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px #000000;
+}
+
+.instructions-box {
+  align-items: center;
+}
+
+#wins-span {
+  color: green;
+}
+
+#losses-span {
+  color: red;
 }
