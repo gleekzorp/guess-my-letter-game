@@ -5,33 +5,42 @@ const guessedLettersSpan = document.getElementById('guessed-letters-span');
 const guessesBox = document.querySelector('.guesses-box');
 const instructionBox = document.querySelector('.instructions-box');
 const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let letter;
+let wins = 0;
+let losses = 0;
+let remainingGuesses = 6;
+
+function pickRandomLetter() {
+  randomNumber = Math.floor(Math.random() * alphabet.length);
+  letter = alphabet[randomNumber];
+  console.log(letter);
+}
 
 document.addEventListener('keypress', (event) => {
-  console.log(event.key)
+  console.log(event.key);
+  remainingGuesses--;
+  remainingGuessesSpan.innerHTML = remainingGuesses;
+  checkLetter(event.key);
 })
 
+function checkLetter(usersEvent) {
+  if (remainingGuesses >= 0 && usersEvent === letter) {
+    console.log('you win!');
+    wins++;
+    winsSpan.innerHTML = wins;
+    reset();
+  } else if (remainingGuesses >= 1 && usersEvent != letter) {
+    guessedLettersSpan.innerHTML += `${usersEvent} `
+  } else if (remainingGuesses == 0 && usersEvent != letter) {
+    losses++;
+    lossesSpan.innerHTML = losses;
+    reset()
+  }
+}
 
-// Create connections to all needed front end elements
-// Create an array of the full alphabet
-// Create a function that randomly picks a letter from that alphabet
-
-// Create an event listener to get user keypresses
-// If users key press is a letter:
-// do check function
-// else:
-// do pleaseSelectLetter function
-
-// Check function
-// remaining guesses - 1
-// if event.key equals letter:
-//   wins + 1
-//   reset function
-// if guesses > 1 and:
-//   push guess to guessed letters
-// if guess == 0:
-//   losses + 1
-//   reset function
-
-// reset function
-// remaining guesses back to 6
-// guessed letters set to none
+function reset() {
+  remainingGuesses = 6;
+  remainingGuessesSpan.innerHTML = remainingGuesses;
+  guessedLettersSpan.innerHTML = '';
+  pickRandomLetter();
+}
